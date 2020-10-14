@@ -9,7 +9,9 @@ function correctBrackets(str){
         else if(item == ')') count--;
         if(count < 0) return false;
     });
-    return (count == 0) ? true : false;
+    console.log(`Expression = "${str}"` )
+    if(count == 0) console.log(true)
+    else  console.log(false);
 }
 
 console.log(correctBrackets(')(1+5)())'));
