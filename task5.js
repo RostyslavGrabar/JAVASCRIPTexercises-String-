@@ -14,4 +14,4 @@ function correctBrackets(str){
     else  console.log(false);
 }
 
-console.log(correctBrackets(')(1+5)())'));
+correctBrackets(')(1+5)())');
