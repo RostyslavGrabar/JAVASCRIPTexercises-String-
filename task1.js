@@ -12,7 +12,7 @@ function stringStatistic(str) {
         "punctuationChars" : str.match(/[^A-Z,А-Я,a-z,а-я,0-9, ]/g),
     };
 
-    console.log(`Statistik of string: ${str}`);
+    console.log(`Statistik of string: "${str}"`);
     for (const res in obj) {
         if(obj[res]){
             obj[res] = obj[res].length;
