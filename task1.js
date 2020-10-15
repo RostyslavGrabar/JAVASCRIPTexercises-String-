@@ -5,11 +5,11 @@
 function stringStatistic(str) {
     let obj = {
         "totalCharacters" : str,
-        "upperCase" : str.match(/[A-Z,А-Я]/g),
-        "lowerCase" : str.match(/[a-z,а-я]/g),
+        "upperCase" : str.match(/[A-ZА-ЯЇ]/g),
+        "lowerCase" : str.match(/[a-zа-я]/g),
         "nums" : str.match(/[0-9]/g),
         "spaces" : str.match(/[ ]/g),
-        "punctuationChars" : str.match(/[^A-Z,А-Я,a-z,а-я,0-9, ]/g),
+        "punctuationChars" : str.match(/[^A-ZА-Яa-zа-я0-9 ]/g),
     };
 
     console.log(`Statistik of string: "${str}"`);
@@ -23,4 +23,4 @@ function stringStatistic(str) {
     console.log(obj);
 }
 
-stringStatistic(" Ї QW 1211../!@#");
+stringStatistic(" Р Q,W 1211../!@#");
