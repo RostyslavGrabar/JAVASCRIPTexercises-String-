@@ -1,6 +1,9 @@
 //З клавіатури вводиться ціле число в діапазоні від 0 до 1000000. Необхідно вивести його прописний стрічковий еквівалент.
 
 function numberInWords(str){
+  if(typeof(str) != "string"){
+    str = str.toString();
+  }
   if(isNaN(+str)){
     return str + " - not a number"
   }else if((str[0] == 0 && str.length > 1) || (str.indexOf('.') != -1) || (+str> 1000000)){
@@ -34,7 +37,12 @@ function numberInWords(str){
   function hundredFunc(single = 0, decimal = 1, hundred = 2,){
     if(strReverse[hundred] != 0){
       singleNumbersFunc(strReverse[hundred]);
-      result += 'hundred ';
+      if(hundred === 5 && strReverse[decimal] == 0 && strReverse[single] == 0){
+        result += 'hundred';
+      } else {
+        result += 'hundred ';
+
+      }
     }
     
     if((strReverse[decimal] + strReverse[single])<20){
@@ -68,3 +76,6 @@ console.log(numberInWords("199002"));
 console.log(numberInWords("51992"));
 console.log(numberInWords("151992"));
 console.log(numberInWords("1151992"));
+console.log(numberInWords("900001"));
+console.log(numberInWords(100100));
+console.log(numberInWords(3));
